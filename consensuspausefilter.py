@@ -5,6 +5,8 @@ import math
 
 from numpy import *
 
+## Looks for consensus pause sequences in well-expressed genes. From that list, determines whether a pause occurs there or not. ##
+
 def ConsensusPauseFilter(pausefilename,genekeyfilename,out_nopausefilename,out_pausefilename):
   CDSfile = open ('CDS_MG1655.mochiview.txt','rU')
   CDSstring = CDSfile.readlines()
@@ -15,7 +17,7 @@ def ConsensusPauseFilter(pausefilename,genekeyfilename,out_nopausefilename,out_p
   fnastring=fnafile.read()
   fnastring=fnastring.replace('\n','')
   
-  pausefile=open(pausefilename, 'rU')
+  pausefile=open(pausefilename, 'rU')  ## Full pause file ##
   pause_dict={}
   
   genekeyfile=open(genekeyfilename)
